@@ -11,32 +11,19 @@ namespace Morgenmadsbuffeten.Controllers
 {
     public class ReceptionController : Controller
     {
-        private readonly ILogger<ReceptionController> _logger;
-
-        public ReceptionController(ILogger<ReceptionController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Expected()
+        public IActionResult ExpectedGuests()
         {
             return View();
         }
 
-        public IActionResult Overview()
+        public IActionResult OverviewOverGuests()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
