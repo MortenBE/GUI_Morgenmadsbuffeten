@@ -12,6 +12,7 @@ using Morgenmadsbuffeten.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Morgenmadsbuffeten
 {
@@ -27,17 +28,39 @@ namespace Morgenmadsbuffeten
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ApplicationDbContext>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "CanEnterKitchen",
+                    policyBuilder => policyBuilder.RequireClaim("KitchenStaff"));
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "CanEnterReception",
+                    policyBuilder => policyBuilder.RequireClaim("ReceptionStaff"));
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "CanEnterRestaurant",
+                    policyBuilder => policyBuilder.RequireClaim("WaiterStaff"));
+            });
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,UserManager<IdentityUser> userManager, ApplicationDbContext DbContext,
+            ILogger<Startup> log)
         {
             if (env.IsDevelopment())
             {
@@ -55,6 +78,7 @@ namespace Morgenmadsbuffeten
 
             app.UseRouting();
 
+            DbHelper.SeedData(DbContext, userManager, log);
             app.UseAuthentication();
             app.UseAuthorization();
 

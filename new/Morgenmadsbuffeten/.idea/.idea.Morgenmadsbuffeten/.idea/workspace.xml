@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8afe50c0-dbe4-4744-b3d8-d2bc25c03596" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Areas/Identity/Pages/Account/Manage/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Kitchen/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/DbHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/RestaurantController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/ReceptionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/Migrations/20200418174156_claims.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/KitchenController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/Migrations/00000000000000_CreateIdentitySchema.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Views/Kitchen/Index.cshtml" />
+        <option value="$PROJECT_DIR$/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/Controllers/KitchenController.cs" />
+        <option value="$PROJECT_DIR$/Startup.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1airEuVbI9kjcQ9W6ZDumiql8Qe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Morgenmadsbuffeten">
+    <configuration name="Morgenmadsbuffeten" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Morgenmadsbuffeten.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="Morgenmadsbuffeten" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Morgenmadsbuffeten: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Morgenmadsbuffeten.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8afe50c0-dbe4-4744-b3d8-d2bc25c03596" name="Default Changelist" comment="" />
+      <created>1587229147094</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587229147094</updated>
+      <workItem from="1587229149240" duration="206000" />
+      <workItem from="1587231496023" duration="420000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="WindowStateProjectService">
+    <state width="1878" height="262" key="GridCell.Tab.0.bottom" timestamp="1587231928385">
+      <screen x="0" y="23" width="1920" height="972" />
+    </state>
+    <state width="1878" height="262" key="GridCell.Tab.0.bottom/-1440.203.1440.877/0.23.1920.972@0.23.1920.972" timestamp="1587231928385" />
+    <state width="1878" height="262" key="GridCell.Tab.0.center" timestamp="1587231928385">
+      <screen x="0" y="23" width="1920" height="972" />
+    </state>
+    <state width="1878" height="262" key="GridCell.Tab.0.center/-1440.203.1440.877/0.23.1920.972@0.23.1920.972" timestamp="1587231928385" />
+    <state width="1878" height="262" key="GridCell.Tab.0.left" timestamp="1587231928384">
+      <screen x="0" y="23" width="1920" height="972" />
+    </state>
+    <state width="1878" height="262" key="GridCell.Tab.0.left/-1440.203.1440.877/0.23.1920.972@0.23.1920.972" timestamp="1587231928384" />
+    <state width="1878" height="262" key="GridCell.Tab.0.right" timestamp="1587231928385">
+      <screen x="0" y="23" width="1920" height="972" />
+    </state>
+    <state width="1878" height="262" key="GridCell.Tab.0.right/-1440.203.1440.877/0.23.1920.972@0.23.1920.972" timestamp="1587231928385" />
+  </component>
+</project>
