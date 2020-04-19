@@ -1,10 +1,9 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Buffet_GUI.Data.Migrations
+namespace Buffet_GUI.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class NewDBModelsMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,11 +47,39 @@ namespace Buffet_GUI.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "BuffetReservations",
+                columns: table => new
+                {
+                    Date = table.Column<DateTime>(nullable: false),
+                    AllExpectedGuests = table.Column<int>(nullable: false),
+                    NumberOfAdults = table.Column<int>(nullable: false),
+                    NumberOfChildren = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BuffetReservations", x => x.Date);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CheckedInGuests",
+                columns: table => new
+                {
+                    RoomNumber = table.Column<int>(nullable: false),
+                    Date = table.Column<DateTime>(nullable: false),
+                    NumberOfAdultsCheckedIn = table.Column<int>(nullable: false),
+                    NumberOfChildrenCheckedIn = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CheckedInGuests", x => new { x.RoomNumber, x.Date });
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -73,7 +100,7 @@ namespace Buffet_GUI.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -209,6 +236,12 @@ namespace Buffet_GUI.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "BuffetReservations");
+
+            migrationBuilder.DropTable(
+                name: "CheckedInGuests");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -4,14 +4,16 @@ using Buffet_GUI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Buffet_GUI.Data.Migrations
+namespace Buffet_GUI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200419210908_NewDBModelsMigration")]
+    partial class NewDBModelsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,18 +23,11 @@ namespace Buffet_GUI.Data.Migrations
 
             modelBuilder.Entity("Buffet_GUI.Data.DBModels.BuffetReservation", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("CheckedIn")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("AllExpectedGuests")
+                        .HasColumnType("int");
 
                     b.Property<int>("NumberOfAdults")
                         .HasColumnType("int");
@@ -40,12 +35,28 @@ namespace Buffet_GUI.Data.Migrations
                     b.Property<int>("NumberOfChildren")
                         .HasColumnType("int");
 
+                    b.HasKey("Date");
+
+                    b.ToTable("BuffetReservations");
+                });
+
+            modelBuilder.Entity("Buffet_GUI.Data.DBModels.CheckedInGuest", b =>
+                {
                     b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
-                    b.ToTable("BuffetReservations");
+                    b.Property<int>("NumberOfAdultsCheckedIn")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfChildrenCheckedIn")
+                        .HasColumnType("int");
+
+                    b.HasKey("RoomNumber", "Date");
+
+                    b.ToTable("CheckedInGuests");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
