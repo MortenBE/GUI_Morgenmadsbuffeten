@@ -18,7 +18,8 @@ namespace Morgenmadsbuffeten.Data
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<BuffetReservation>()
-                .HasKey(e => e.RoomNumber);
+                .HasKey(br => br.Id);
+
             mb.Entity<BuffetReservation>().Property(a => a.CheckedIn).HasDefaultValue(false);
 
             base.OnModelCreating(mb);

@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Morgenmadsbuffeten.Data.Migrations
+namespace Buffet_GUI.Data.Migrations
 {
-    public partial class MyNewModelMigration : Migration
+    public partial class MyMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,9 @@ namespace Morgenmadsbuffeten.Data.Migrations
                 name: "BuffetReservations",
                 columns: table => new
                 {
-                    RoomNumber = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    RoomNumber = table.Column<int>(nullable: false),
                     NumberOfChildren = table.Column<int>(nullable: false),
                     NumberOfAdults = table.Column<int>(nullable: false),
                     CheckedIn = table.Column<bool>(nullable: false, defaultValue: false),
@@ -20,7 +21,7 @@ namespace Morgenmadsbuffeten.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BuffetReservations", x => x.RoomNumber);
+                    table.PrimaryKey("PK_BuffetReservations", x => x.Id);
                 });
         }
 

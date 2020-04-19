@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Morgenmadsbuffeten.Data.Migrations
+namespace Buffet_GUI.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

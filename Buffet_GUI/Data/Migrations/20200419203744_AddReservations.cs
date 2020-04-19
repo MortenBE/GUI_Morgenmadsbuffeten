@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Morgenmadsbuffeten.Data.Migrations
+namespace Buffet_GUI.Data.Migrations
 {
-    public partial class claims : Migration
+    public partial class AddReservations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
