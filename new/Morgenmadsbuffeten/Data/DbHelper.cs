@@ -37,7 +37,8 @@ namespace Morgenmadsbuffeten.Data
                 if (result.Succeeded)
                 {
                     var adminClaim = new Claim("KitchenStaff", "Yes");
-                    userManager.AddClaimAsync(user, adminClaim);
+                    var adminClaimResult = userManager.AddClaimAsync(user, adminClaim);
+                    adminClaimResult.Wait();
                 }
             }
         }
@@ -61,7 +62,8 @@ namespace Morgenmadsbuffeten.Data
                 if (result.Succeeded)
                 {
                     var adminClaim = new Claim("ReceptionStaff", "Yes");
-                    userManager.AddClaimAsync(user, adminClaim);
+                    var adminClaimResult = userManager.AddClaimAsync(user, adminClaim);
+                    adminClaimResult.Wait();
                 }
             }
         }
@@ -85,7 +87,8 @@ namespace Morgenmadsbuffeten.Data
                 if (result.Succeeded)
                 {
                     var adminClaim = new Claim("WaiterStaff", "Yes");
-                    userManager.AddClaimAsync(user, adminClaim);
+                    var adminClaimResult = userManager.AddClaimAsync(user, adminClaim);
+                    adminClaimResult.Wait();
                 }
             }
         }
