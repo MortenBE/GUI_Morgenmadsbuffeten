@@ -39,7 +39,6 @@ namespace Buffet_GUI.Controllers
         
         public IActionResult ShowCheckedInBuffetList(DateTime dateTime)
         {
-            //DateTime date = DateTime.Now.Date;  
             DateTime date = dateTime.Date;     
             
             var restaurantCheckIns = _context.Set<CheckedInGuest>().Where(c => c.Date == date).ToList();

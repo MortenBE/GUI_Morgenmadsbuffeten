@@ -4,19 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h3>Below it is possible to add expected guests for a given day, and inspect expected guests for all entrys per day</h3>
-
-@*<form asp-action="KitchenOverview" method="get">
-    <div class="form-group">
-        <input type="date" name="dateTime" />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Show" class="btn btn-primary" />
-    </div>
-</form>*@
-
-
-
+<b>Below it is possible to add expected guests for a given day, and inspect expected guests for all entrys per day</b>
 
 <p>
     <a asp-action="Create">Add expected guests for a given day</a>
@@ -54,11 +42,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.NumberOfChildren)
-                </td>
-                <td>
-                    @*<a asp-action="Edit" asp-route-id="@item.Date">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Date">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Date">Delete</a>*@
                 </td>
             </tr>
         }

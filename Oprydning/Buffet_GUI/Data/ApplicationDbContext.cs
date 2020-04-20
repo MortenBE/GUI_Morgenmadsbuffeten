@@ -57,10 +57,15 @@ namespace Buffet_GUI.Data
                     }
 
                 );
+            modelBuilder.Entity<BuffetReservation>()
+                .HasData(
+                    new BuffetReservation()
+                    {
+                        AllExpectedGuests = 125,
+                        NumberOfAdults = 75,
+                        NumberOfChildren = 50,
+                        Date = DateTime.Today
+                    });
         }
-
-
-
-
     }
 }

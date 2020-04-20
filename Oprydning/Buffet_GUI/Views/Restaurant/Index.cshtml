@@ -5,10 +5,10 @@
 }
 
     <h1>Welcome Restarant staff to the Restarant main page!</h1>
-    <h2>Below you can check in guests for the kitchen, with the expected guests for a given day:</h2>
+    <b>Below you can check in guests for the kitchen, and inspect the expected guests:</b>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Check in guests</a>
 </p>
 <table class="table">
     <thead>
@@ -32,11 +32,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.NumberOfChildrenCheckedIn)
                 </td>
-                @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>*@
             </tr>
         }
     </tbody>

@@ -36,11 +36,6 @@ namespace Buffet_GUI.Models
             TotalChildrenNotCheckedIn = TotalChildrenExpected - TotalChildren;
             TotalAdultsNotCheckedIn = TotalAdultsExpected - TotalAdults;
             TotalNotCheckedIn = TotalCheckedInExpected - TotalCheckedIn;
-
-            //TotalChildrenNotCheckedIn = expectedGuestsInfo.NumberOfChildren - TotalChildren;
-            //TotalAdultsNotCheckedIn = expectedGuestsInfo.NumberOfAdults - TotalAdults;
-            //TotalNotCheckedIn = expectedGuestsInfo.AllExpectedGuests - TotalCheckedIn;
-
         }
         public int TotalChildrenNotCheckedIn { get; set; }
         public int TotalAdultsNotCheckedIn { get; set; }
