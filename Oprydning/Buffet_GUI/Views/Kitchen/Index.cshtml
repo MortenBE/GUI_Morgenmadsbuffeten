@@ -3,11 +3,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Kitchen Main Page</h1>
+<h1>Welcome Kitchen staff to the Kitchen main page:</h1>
 
 <form asp-action="ShowBuffetReservationsExpected" method="get">
     <div class="form-group">
-        <label class="control-label">Date:</label>
+        <label class="control-label">Search for expected guests on a specific day: </label>
 
         <input type="date" name="datetime" class="form-control col-md-6" />
     </div>
@@ -19,7 +19,7 @@
 
 <form asp-controller="Reception" asp-action="ShowCheckedInBuffetList" method="get">
     <div class="form-group">
-        <label class="control-label">Date:</label>
+        <label class="control-label">Search for checked in guests on a specific day:</label>
 
         <input type="date" name="datetime" class="form-control col-md-6" />
     </div>
@@ -30,7 +30,7 @@
 
 <form asp-controller="Kitchen" asp-action="ShowNotCheckInGuests" method="get">
     <div class="form-group">
-        <label class="control-label">Date:</label>
+        <label class="control-label">Search for non-checked in guests on a specific day:</label>
 
         <input type="date" name="datetime" class="form-control col-md-6" />
     </div>
