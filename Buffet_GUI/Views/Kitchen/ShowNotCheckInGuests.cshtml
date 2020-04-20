@@ -6,3 +6,35 @@
 
 <h1>ShowNotCheckInGuests</h1>
 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalChildrenNotCheckedIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAdultsNotCheckedIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalNotCheckedIn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.TotalChildrenNotCheckedIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.TotalAdultsNotCheckedIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.TotalNotCheckedIn)
+                </td>
+
+            </tr>
+        
+    </tbody>
+</table>
+
