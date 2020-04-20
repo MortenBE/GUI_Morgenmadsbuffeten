@@ -1,6 +1,7 @@
 ﻿using Buffet_GUI.Data;
 using Buffet_GUI.Data.DBModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,12 +30,17 @@ namespace Buffet_GUI.Controllers
             {
                 _context.Add(checkedInGuest);
                 await _context.SaveChangesAsync();
-                return View();
-                //return RedirectToAction(nameof(Index));
+                
+                return RedirectToAction(nameof(Index));
             }
-            return View();
-            //return View(checkedInGuest);
+            
+            return View(checkedInGuest);
         }
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.CheckedInGuests.ToListAsync());
+        }       
 
     }
 }

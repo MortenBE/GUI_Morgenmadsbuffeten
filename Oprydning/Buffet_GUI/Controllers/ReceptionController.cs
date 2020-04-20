@@ -32,9 +32,10 @@ namespace Buffet_GUI.Controllers
         {
             return View();
         }
-        public IActionResult ShowCheckedInBuffetList()
-        {           
-            DateTime date = DateTime.Now.Date;        
+        public IActionResult ShowCheckedInBuffetList(DateTime dateTime)
+        {
+            //DateTime date = DateTime.Now.Date;  
+            DateTime date = dateTime.Date;     
             
             var restaurantCheckIns = _context.Set<CheckedInGuest>().Where(c => c.Date == date).ToList();
 
@@ -53,9 +54,5 @@ namespace Buffet_GUI.Controllers
             }
             return View(buffetReservation);
         }
-
-
-
-
     }
 }

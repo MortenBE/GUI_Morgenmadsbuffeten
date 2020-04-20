@@ -22,10 +22,10 @@ namespace Buffet_GUI.Controllers
             return View();
         }
 
-        public IActionResult ShowBuffetReservationsExpected()
+        public IActionResult ShowBuffetReservationsExpected(DateTime dateTime)
         {
-            
-            DateTime date = DateTime.Now.Date;          
+            DateTime date = dateTime.Date;
+            //DateTime date = DateTime.Now.Date;          
 
             var restaurantCheckIns = _context.Set<BuffetReservation>().Where(c => (c.Date.Day == date.Day) && (c.Date.Month == date.Month) && (c.Date.Year == date.Year)).ToList();
 
@@ -35,10 +35,11 @@ namespace Buffet_GUI.Controllers
         }
 
         /* Given date, show guest-information (expected amount, checked-in amount, etc.) */
-        public IActionResult ShowNotCheckInGuests()
+        public IActionResult ShowNotCheckInGuests(DateTime dateTime)
         {
-          
-            DateTime date = DateTime.Now.Date;
+            DateTime date = dateTime.Date;
+
+            //DateTime date = DateTime.Now.Date;
 
             var expectedGuestsInfo = _context.Set<BuffetReservation>().Where(c => (c.Date.Day == date.Day) && (c.Date.Month == date.Month) && (c.Date.Year == date.Year)).ToList();
             var checkedInEntries = _context.Set<CheckedInGuest>().Where(c => c.Date == date).ToList();
