@@ -24,8 +24,7 @@ namespace Buffet_GUI.Controllers
         public IActionResult ShowBuffetReservationsExpected()
         {
             
-            DateTime date = DateTime.Now.Date;
-           
+            DateTime date = DateTime.Now.Date;          
 
             var restaurantCheckIns = _context.Set<BuffetReservation>().Where(c => (c.Date.Day == date.Day) && (c.Date.Month == date.Month) && (c.Date.Year == date.Year)).ToList();
 
@@ -33,13 +32,5 @@ namespace Buffet_GUI.Controllers
 
             return View(restaurantCheckIns);
         }
-
-
-
-        
-
-
-
-
     }
 }
