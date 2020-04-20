@@ -39,13 +39,13 @@
         <e p="ApplicationDbContext.cs" t="Include" />
         <e p="DbHelper.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
-          <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
-          <e p="20200418174156_claims.cs" t="Include" />
-          <e p="20200418174156_claims.Designer.cs" t="Include" />
+          <e p="20200419195658_myMyMigration.cs" t="Include" />
+          <e p="20200419195658_myMyMigration.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
-        <e p="Models" t="Include" />
+        <e p="Models" t="Include">
+          <e p="BuffetReservation.cs" t="Include" />
+        </e>
       </e>
       <e p="Models" t="Include">
         <e p="ErrorViewModel.cs" t="Include" />
@@ -157,7 +157,7 @@
       </e>
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Morgenmadsbuffeten.1891401014.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Morgenmadsbuffeten.-460978565.00" t="ExcludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
   </component>
 </project>

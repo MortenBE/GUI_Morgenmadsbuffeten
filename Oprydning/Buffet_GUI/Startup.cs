@@ -33,6 +33,27 @@ namespace Buffet_GUI
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "CanEnterKitchen",
+                    policyBuilder => policyBuilder.RequireClaim("KitchenStaff"));
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "CanEnterReception",
+                    policyBuilder => policyBuilder.RequireClaim("ReceptionStaff"));
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "CanEnterRestaurant",
+                    policyBuilder => policyBuilder.RequireClaim("WaiterStaff"));
+            });
+            services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
@@ -57,7 +78,7 @@ namespace Buffet_GUI
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            DbHelper.SeedData(DbContext, userManager, log);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
