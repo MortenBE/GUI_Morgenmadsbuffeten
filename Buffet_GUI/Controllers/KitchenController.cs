@@ -1,4 +1,5 @@
 ﻿using Buffet_GUI.Data;
+using Buffet_GUI.Data.DBModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,22 @@ namespace Buffet_GUI.Controllers
         {
             return View();
         }
+
+        public IActionResult ShowBuffetReservationsExpected()
+        {
+            DateTime date = DateTime.Today;
+            Console.WriteLine(date);
+
+            var restaurantCheckIns = _context.Set<BuffetReservation>().Where(c => c.Date == date).ToList();
+
+            return View(restaurantCheckIns);
+        }
+
+
+
+        
+
+
 
 
     }
