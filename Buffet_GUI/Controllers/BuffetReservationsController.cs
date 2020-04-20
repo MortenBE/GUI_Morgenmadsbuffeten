@@ -21,9 +21,44 @@ namespace Buffet_GUI.Controllers
 
         // GET: BuffetReservations
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.BuffetReservations.ToListAsync());
+        {           
+            return View(await _context.BuffetReservations.ToListAsync());           
         }
+
+
+
+        //Til køkken
+        public IActionResult KitchenOverview()
+        {
+            
+            return View();
+            //return View(await _context.BuffetReservations.ToListAsync());
+
+            //    if (id == null)
+            //    {
+            //        return NotFound();
+            //    }
+
+            //    var buffetReservation = await _context.BuffetReservations
+            //        .FirstOrDefaultAsync(m => m.Date == id);
+            //    if (buffetReservation == null)
+            //    {
+            //        return NotFound();
+            //    }
+
+            //    return View(buffetReservation);
+        }
+
+        //public IActionResult Details(DateTime dateTime)
+        //{
+        //    var buffetReservations = _context.Set<BuffetReservation>().Find(dateTime.Date);
+
+        //    if (buffetReservations != null)
+        //    {
+        //        return View(buffetReservations);
+        //    }
+        //    return RedirectToAction(nameof(Index));
+        //}
 
         // GET: BuffetReservations/Details/5
         public async Task<IActionResult> Details(DateTime? id)
@@ -149,5 +184,9 @@ namespace Buffet_GUI.Controllers
         {
             return _context.BuffetReservations.Any(e => e.Date == id);
         }
+
+
+
+
     }
 }
