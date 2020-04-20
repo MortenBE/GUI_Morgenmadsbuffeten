@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
 
 <h2>Welcome Restarant staff to the Restarant main page!</h2>
 <b>Below you can check in guests for the kitchen, with the expected guests for a given day:</b>
@@ -33,7 +35,7 @@
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="button" />
             </div>
         </form>
     </div>

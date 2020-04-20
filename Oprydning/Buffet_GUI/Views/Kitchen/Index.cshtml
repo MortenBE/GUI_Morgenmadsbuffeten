@@ -3,6 +3,10 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <link rel="stylesheet" href="css/StyleSheet.css"/>
+</head>
+
 <h2>Welcome Kitchen staff to the Kitchen main page:</h2>
 
 <form asp-action="ShowBuffetReservationsExpected" method="get">
@@ -13,7 +17,7 @@
     </div>
 
     <div class="form-group">
-        <input type="submit" value="Search" />
+        <input type="submit" class="button" value="Search" />
     </div>
 </form>
 
@@ -24,7 +28,7 @@
         <input type="date" name="datetime" class="form-control col-md-6" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Search" />
+        <input type="submit" class="button" value="Search" />
     </div>
 </form>
 
@@ -35,6 +39,6 @@
         <input type="date" name="datetime" class="form-control col-md-6" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Search" />
+        <input type="submit" class="button" value="Search" />
     </div>
 </form>
