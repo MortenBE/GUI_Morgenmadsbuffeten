@@ -5,6 +5,7 @@ using Buffet_GUI.Data;
 using Buffet_GUI.Data.DBModels;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Buffet_GUI.Controllers
 {
@@ -17,16 +18,17 @@ namespace Buffet_GUI.Controllers
             _context = context;
         }
 
-        public IActionResult Create()
-        {
-            return View();
-        }
 
+        [Authorize("CanEnterReception")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.BuffetReservations.ToListAsync());
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         public IActionResult Reception()
         {

@@ -1,5 +1,6 @@
 ﻿using Buffet_GUI.Data;
 using Buffet_GUI.Data.DBModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,6 +12,13 @@ namespace Buffet_GUI.Controllers
 {
     public class RestaurantController : Controller
     {
+        [Authorize("CanEnterRestaurant")]
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.CheckedInGuests.ToListAsync());
+        }
+
         private readonly ApplicationDbContext _context;
 
         public RestaurantController(ApplicationDbContext context)
@@ -35,12 +43,7 @@ namespace Buffet_GUI.Controllers
             }
             
             return View(checkedInGuest);
-        }
-
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.CheckedInGuests.ToListAsync());
-        }       
+        }     
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Buffet_GUI.Data;
 using Buffet_GUI.Data.DBModels;
 using Buffet_GUI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Buffet_GUI.Controllers
         {
             _context = context;
         }
+        [Authorize("CanEnterKitchen")]
         public IActionResult Index()
         {
             return View();
