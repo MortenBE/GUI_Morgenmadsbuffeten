@@ -23,10 +23,13 @@ namespace Buffet_GUI.Controllers
 
         public IActionResult ShowBuffetReservationsExpected()
         {
-            DateTime date = DateTime.Today;
-            Console.WriteLine(date);
+            
+            DateTime date = DateTime.Now.Date;
+           
 
-            var restaurantCheckIns = _context.Set<BuffetReservation>().Where(c => c.Date == date).ToList();
+            var restaurantCheckIns = _context.Set<BuffetReservation>().Where(c => (c.Date.Day == date.Day) && (c.Date.Month == date.Month) && (c.Date.Year == date.Year)).ToList();
+
+            //var restaurantCheckIns = _context.Set<BuffetReservation>().Where(c => c.Date == date).ToList();
 
             return View(restaurantCheckIns);
         }

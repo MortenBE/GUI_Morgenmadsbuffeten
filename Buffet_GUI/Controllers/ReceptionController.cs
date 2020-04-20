@@ -20,18 +20,13 @@ namespace Buffet_GUI.Controllers
         {
             return View();
         }
-
-
-
-
-
-
         public IActionResult ShowCheckedInBuffetList()
         {
            
             DateTime date = DateTime.Now.Date;
             Console.WriteLine(date);
 
+            //var restaurantCheckIns = _context.Set<BuffetReservation>().Where(c => (c.Date.Day == date.Day) && (c.Date.Month == date.Month) && (c.Date.Year == date.Year)).ToList();
             var restaurantCheckIns = _context.Set<CheckedInGuest>().Where(c => c.Date == date).ToList();
 
             return View(restaurantCheckIns);
