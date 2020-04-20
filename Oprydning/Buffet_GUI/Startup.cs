@@ -12,6 +12,8 @@ using Buffet_GUI.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Morgenmadsbuffeten.Data;
+using Microsoft.Extensions.Logging;
 
 namespace Buffet_GUI
 {
@@ -58,7 +60,8 @@ namespace Buffet_GUI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<IdentityUser> userManager, ApplicationDbContext DbContext,
+            ILogger<Startup> log)
         {
             if (env.IsDevelopment())
             {
@@ -78,7 +81,9 @@ namespace Buffet_GUI
 
             app.UseAuthentication();
             app.UseAuthorization();
+
             DbHelper.SeedData(DbContext, userManager, log);
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

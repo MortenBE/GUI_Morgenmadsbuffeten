@@ -25,15 +25,18 @@ namespace Buffet_GUI.Controllers
             return View(await _context.BuffetReservations.ToListAsync());
         }
 
+        [Authorize("CanEnterReception")]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize("CanEnterReception")]
         public IActionResult Reception()
         {
             return View();
         }
+        
         public IActionResult ShowCheckedInBuffetList(DateTime dateTime)
         {
             //DateTime date = DateTime.Now.Date;  
@@ -44,6 +47,7 @@ namespace Buffet_GUI.Controllers
             return View(restaurantCheckIns);
         }
 
+        [Authorize("CanEnterReception")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AllExpectedGuests,NumberOfAdults,NumberOfChildren,Date")] BuffetReservation buffetReservation)

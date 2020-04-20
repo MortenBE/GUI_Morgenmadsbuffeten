@@ -14,6 +14,7 @@ namespace Buffet_GUI.Controllers
     {
         private readonly ApplicationDbContext _context;
 
+        
         public KitchenController(ApplicationDbContext context)
         {
             _context = context;
@@ -23,7 +24,7 @@ namespace Buffet_GUI.Controllers
         {
             return View();
         }
-
+        [Authorize("CanEnterKitchen")]
         public IActionResult ShowBuffetReservationsExpected(DateTime dateTime)
         {
             DateTime date = dateTime.Date;
@@ -36,6 +37,7 @@ namespace Buffet_GUI.Controllers
             return View(restaurantCheckIns);
         }
 
+        [Authorize("CanEnterKitchen")]
         /* Given date, show guest-information (expected amount, checked-in amount, etc.) */
         public IActionResult ShowNotCheckInGuests(DateTime dateTime)
         {

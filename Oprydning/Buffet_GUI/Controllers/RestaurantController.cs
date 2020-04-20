@@ -13,7 +13,6 @@ namespace Buffet_GUI.Controllers
     public class RestaurantController : Controller
     {
         [Authorize("CanEnterRestaurant")]
-
         public async Task<IActionResult> Index()
         {
             return View(await _context.CheckedInGuests.ToListAsync());
@@ -25,11 +24,13 @@ namespace Buffet_GUI.Controllers
         {
             _context = context;
         }
+
+        [Authorize("CanEnterRestaurant")]
         public IActionResult Create()
         {
             return View();
         }
-
+        [Authorize("CanEnterRestaurant")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("RoomNumber,NumberOfAdultsCheckedIn,NumberOfChildrenCheckedIn,Date")] CheckedInGuest checkedInGuest)
