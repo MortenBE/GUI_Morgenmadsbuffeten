@@ -20,37 +20,36 @@ namespace Buffet_GUI.Data
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<CheckedInGuest>().HasKey(p => new { p.RoomNumber, p.Date });
-            mb.Entity<BuffetReservation>().HasKey(p => p.Date);           
+            mb.Entity<BuffetReservation>().HasKey(p => p.Date);
+
+            SeedGuests(mb);
 
             base.OnModelCreating(mb);
         }
 
-        //private void SeedData(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<BuffetReservation>()
-        //        .HasData(
-        //            new BuffetReservation()
-        //            {
-        //                RoomNumber = 1,
-        //                Date = DateTime.Today,
-        //                NumberOfChildren = 6,
-        //                NumberOfAdults = 10
-        //            },
-        //            new BuffetReservation()
-        //            {
-        //                RoomNumber = 2,
-        //                Date = DateTime.Today,
-        //                NumberOfChildren = 4,
-        //                NumberOfAdults = 2
-        //            },
-        //            new BuffetReservation()
-        //            {
-        //                RoomNumber = 43,
-        //                Date = DateTime.Today,
-        //                NumberOfChildren = 5,
-        //                NumberOfAdults = 3
-        //            }  
-        //            );
-        //}
+        private void SeedGuests(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CheckedInGuest>()
+                .HasData(
+                    new CheckedInGuest()
+                    {
+                        RoomNumber = 22,
+                        NumberOfChildrenCheckedIn = 6,
+                        NumberOfAdultsCheckedIn = 10,
+                        Date = DateTime.Today
+                    },
+                    new CheckedInGuest()
+                    {
+                        RoomNumber = 14,
+                        NumberOfChildrenCheckedIn = 1,
+                        NumberOfAdultsCheckedIn = 2,
+                        Date = DateTime.Today
+                    }
+                );
+        }
+
+
+
+
     }
 }

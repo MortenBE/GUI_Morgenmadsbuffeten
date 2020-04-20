@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using Buffet_GUI.Data;
 using Buffet_GUI.Data.DBModels;
+using System.Threading.Tasks;
 
 namespace Buffet_GUI.Controllers
 {
@@ -15,24 +16,29 @@ namespace Buffet_GUI.Controllers
             _context = context;
         }
 
-        //public IActionResult Reception()
-        //{
-        //    return View();
-        //}
-
-        public IActionResult ShowCheckedInBuffetList()
+        public IActionResult Reception()
         {
             return View();
         }
 
-        public IActionResult Reception()
+
+
+
+
+
+        public IActionResult ShowCheckedInBuffetList()
         {
+           
             DateTime date = DateTime.Now.Date;
+            Console.WriteLine(date);
 
             var restaurantCheckIns = _context.Set<CheckedInGuest>().Where(c => c.Date == date).ToList();
 
             return View(restaurantCheckIns);
         }
+
+
+
 
 
 

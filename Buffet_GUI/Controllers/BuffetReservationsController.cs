@@ -27,6 +27,7 @@ namespace Buffet_GUI.Controllers
 
 
 
+
         //Til køkken
         public IActionResult KitchenOverview()
         {
