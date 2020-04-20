@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Buffet_GUI.Data.DBModels.CheckedInGuest>
+@{
+    ViewData["Title"] = "ShowCheckedInBuffetList";
+}
+
+<h1>ShowCheckedInBuffetList</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfAdultsCheckedIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfChildrenCheckedIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfAdultsCheckedIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfChildrenCheckedIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
