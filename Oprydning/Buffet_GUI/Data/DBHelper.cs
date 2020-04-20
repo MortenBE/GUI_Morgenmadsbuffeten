@@ -43,7 +43,7 @@ namespace Morgenmadsbuffeten.Data
 
         public static void SeedReception(UserManager<IdentityUser> userManager, ILogger log)
         {
-            const string adminEmail = "Reception@staff.dk";
+            const string adminEmail = "Reception@staff.com";
             const string adminPassword = "Iamstaff1!";
 
             if (userManager.FindByNameAsync(adminEmail).Result == null)

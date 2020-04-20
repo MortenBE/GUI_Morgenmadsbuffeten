@@ -20,7 +20,10 @@ namespace Buffet_GUI.Data
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<CheckedInGuest>().HasKey(p => new { p.RoomNumber, p.Date });
-            mb.Entity<BuffetReservation>().HasKey(p => p.Date);
+            mb.Entity<BuffetReservation>().HasKey(p => p.Date
+            );
+            mb.Entity<BuffetReservation>().HasIndex(p => p.Date).IsUnique();
+
 
             SeedGuests(mb);
 
@@ -44,7 +47,15 @@ namespace Buffet_GUI.Data
                         NumberOfChildrenCheckedIn = 1,
                         NumberOfAdultsCheckedIn = 2,
                         Date = DateTime.Today
+                    },
+                    new CheckedInGuest()
+                    {
+                        RoomNumber = 123,
+                        NumberOfChildrenCheckedIn = 4,
+                        NumberOfAdultsCheckedIn = 7,
+                        Date = DateTime.Today
                     }
+
                 );
         }
 
