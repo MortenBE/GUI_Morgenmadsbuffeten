@@ -7,7 +7,7 @@
 </head>
 
 
-    <h2>Welcome Restarant staff to the Restarant main page!</h2>
+<h2>Welcome Restarant staff to the Restarant main page!</h2>
 
 <form asp-action="ShowCheckedInBuffetList" method="get">
     <div class="form-group">
@@ -20,9 +20,8 @@
     </div>
 </form>
 
-
-<b>Add expected Guests</b>
-
-<div>
-    <a asp-controller="Reception" asp-action="Create">Add Expected Guests</a>
-</div
+<form asp-controller="Reception" asp-action="Create" method="get">
+    <div>
+        <button class="button" > Add Expected Guests </button>
+    </div>
+</form>
