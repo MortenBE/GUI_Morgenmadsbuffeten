@@ -1,29 +1,10 @@
 ﻿header {
-    background-color: #5f93ad;
+    background-color: #ff5000;
 }
 
 body {
-    background-color: #bee4f7;
+    background-color: #ff7f3c;
     font-size: 1em;
-}
-
-.button {
-    background-color: #c0c0c0;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-h1, h2, h3 {
-    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
-    background-color: navy;
-    color: white;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -47,8 +28,4 @@ input[type=number] {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-}
-
-body {
-    background-color: coral;
 }
