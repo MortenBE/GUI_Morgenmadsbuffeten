@@ -9,9 +9,6 @@
 
 <b>Below it is possible to add expected guests for a given day, and inspect expected guests for all entrys per day</b>
 
-<p>
-    <a asp-action="Create">Add expected guests for a given day</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -50,3 +47,10 @@
         }
     </tbody>
 </table>
+
+
+<form asp-controller="Reception" asp-action="Create" method="get">
+    <div>
+        <button class="button"> Add expected guests for a given day </button>
+    </div>
+</form>

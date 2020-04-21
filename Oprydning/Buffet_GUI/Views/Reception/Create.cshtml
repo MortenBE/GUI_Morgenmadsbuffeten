@@ -39,9 +39,12 @@
         </form>
     </div>
 </div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<form asp-action="Index" method="get">
+    <div>
+        <button class="button"> Back to List </button>
+    </div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

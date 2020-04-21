@@ -12,9 +12,12 @@
 <h1>Welcome Restarant staff to the Restarant main page!</h1>
     <b>Below you can check in guests for the kitchen, and inspect the expected guests:</b>
 
-<p>
-    <a asp-action="Create">Check in guests</a>
-</p>
+<form asp-action="Create" method="get">
+    <div>
+        <button class="button"> Check in guests </button>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
